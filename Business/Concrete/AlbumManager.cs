@@ -29,7 +29,7 @@ namespace Business.Concrete
         public IDataResult<List<Album>> GetListByArtist(int artistId)
         {
             var query = _albumDal.AsQueryable()
-                .Include(p=>p.Artist)
+                .Include(p => p.Artist)
                 .Where(a => a.ArtistId == artistId)
                 .ToList();
 

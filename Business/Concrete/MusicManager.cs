@@ -20,15 +20,21 @@ public class MusicManager : IMusicService
 
     public IDataResult<List<Music>> GetList()
     {
-        return new SuccessDataResult<List<Music>>(_musicDal.GetList().ToList());
+        var query = _musicDal.AsQueryable()
+            .Include(p => p.Album.Artist)
+            .ToList();
+        return new SuccessDataResult<List<Music>>(query);
+        //return new SuccessDataResult<List<Music>>(_musicDal.GetList().ToList());
     }
 
     public IDataResult<List<Music>> GetListByAlbum(int albumId)
     {
         var query = _musicDal.AsQueryable()
-            .Include(p => p.Album)
+            .Include(p => p.Album.Artist)
             .Where(p => p.AlbumId == albumId)
             .ToList();
+        
+        
         return new SuccessDataResult<List<Music>>(query);
     }
 

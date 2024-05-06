@@ -10,6 +10,5 @@ public class Music : IEntity
     public string Name { get; set; }
     public short Duration { get; set; }
     [ForeignKey("Album")] public int AlbumId { get; set; }
-
     public virtual Album? Album { get; set; }
 }

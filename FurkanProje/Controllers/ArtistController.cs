@@ -29,7 +29,7 @@ namespace WebAPI.Controllers
 
 
         [HttpGet("GetById")]
-        public IActionResult GetById( int Id)
+        public IActionResult GetById(int Id)
         {
             var result = _artistService.GetById(Id);
             if (result.Success)

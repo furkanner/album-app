@@ -10,7 +10,7 @@ public class Album : IEntity
     public DateTime Time { get; set; }
 
     [ForeignKey("Artist")] public int ArtistId { get; set; }
-    public virtual Artist? Artist { get; set; }
 
+    public virtual Artist? Artist { get; set; }
     // public virtual ICollection<Music>? Musics { get; set; }
 }

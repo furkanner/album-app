@@ -52,7 +52,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("Delete")]
-        public IActionResult Delete(Entities.Concrete.Music music)
+        public IActionResult Delete(Music music)
         {
             var result = _musicService.Delete(music);
             if (result.Success)
@@ -64,7 +64,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("Update")]
-        public IActionResult Update(Entities.Concrete.Music music)
+        public IActionResult Update(Music music)
         {
             var result = _musicService.Update(music);
             if (result.Success)

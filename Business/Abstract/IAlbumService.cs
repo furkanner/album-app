@@ -8,8 +8,7 @@ namespace Business.Abstract
     {
         IDataResult<List<Album>> GetList();
 
-        //IDataResult<List<Album>> GetListByArtist(int ArtistId);
-        IDataResult<List<Album>> GetListByArtist(int artistId);//Ekledim
+        IDataResult<List<Album>> GetListByArtist(int artistId); //Ekledim
 
         IResult Add(Album album);
 
