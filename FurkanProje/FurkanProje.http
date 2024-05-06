@@ -1,0 +1,6 @@
+@FurkanProje_HostAddress = http://localhost:5062
+
+GET {{FurkanProje_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
