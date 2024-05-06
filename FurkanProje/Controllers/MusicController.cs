@@ -13,7 +13,7 @@ namespace WebAPI.Controllers
         private IMusicService _musicService = musicService;
         private IMusicDal _musicDal = musicDal;
 
-        [HttpGet("getall")]
+        [HttpGet("Getall")]
         public IActionResult GetList()
         {
             var result = _musicService.GetList();
@@ -29,6 +29,20 @@ namespace WebAPI.Controllers
         public IActionResult GetListByAlbum(int albumId)
         {
             var result = _musicService.GetListByAlbum(albumId);
+            if (result.Success)
+            {
+                return Ok(new SuccessDataResult<List<Music>>(result.Data));
+            }
+            else
+            {
+                return BadRequest(new ErrorDataResult<List<Music>>("Album not found for the given Name"));
+            }
+        }
+        
+        [HttpGet("GetListByArtist")]
+        public IActionResult GetListByArtist(int id)
+        {
+            var result = _musicService.GetListByArtist(id);
             if (result.Success)
             {
                 return Ok(new SuccessDataResult<List<Music>>(result.Data));

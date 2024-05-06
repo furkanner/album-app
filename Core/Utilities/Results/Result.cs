@@ -6,12 +6,10 @@ public class Result : IResult
     {
         Message = message;
     }
-
     public Result(bool success)
     {
         Success = success;
     }
-
     public bool Success { get; }
     public string Message { get; }
 }

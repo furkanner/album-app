@@ -7,4 +7,5 @@ namespace DataAccess.Concrete.EntityFramework;
 
 public class EfArtistDal : EfEntityReposityBase<Artist, FurkanContext>, IArtistDal
 {
+    
 }

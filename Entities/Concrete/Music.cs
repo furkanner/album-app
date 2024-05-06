@@ -3,7 +3,6 @@ using Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Entities.Concrete;
-
 public class Music : IEntity
 {
     public int Id { get; set; }

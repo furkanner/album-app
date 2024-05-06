@@ -15,12 +15,12 @@ namespace WebAPI.Controllers
             _albumService = albumService;
             _albumDal = albumDal;
         }
-
+        
         private readonly IAlbumService _albumService;
         private readonly IAlbumDal _albumDal;
 
 
-        [HttpGet("getall")]
+        [HttpGet("GetAll")]
         public IActionResult GetList()
         {
             var result = _albumService.GetList();

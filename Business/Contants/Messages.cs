@@ -2,17 +2,15 @@ namespace Business.Contants;
 
 public class Messages
 {
-    public static readonly string SanatciAdded = "Sanatçı başarıyla eklendi";
-    public static readonly string SanatciDeleted = "Sanatçı başarıyla silindi";
-    public static readonly string SanatciUpdated = "Sanatçı başarıyla güncellendi";
+    public static readonly string ArtistAdded = "Artist successfully added";
+    public static readonly string ArtistDeleted = "Artist successfully deleted";
+    public static readonly string ArtistUpdated = "Artist successfully updated";
 
+    public static readonly string AlbumAdded = "Album successfully added";
+    public static readonly string AlbumDeleted = "Album successfully deleted";
+    public static readonly string AlbumUpdated = "Album successfully updated";
 
-    public static readonly string AlbumAdded = "Album başarıyla eklendi";
-    public static readonly string AlbumDeleted = "Album başarıyla silindi";
-    public static readonly string AlbumUpdated = "Album başarıyla güncellendi";
-
-
-    public static readonly string SarkiAdded = "Sarkı başarıyla eklendi";
-    public static readonly string SarkiDeleted = "Sarkı başarıyla silindi";
-    public static readonly string SarkiUpdated = "Sarkı başarıyla güncellendi";
+    public static readonly string MusicAdded = "Music successfully added";
+    public static readonly string MusicDeleted = "Music successfully deleted";
+    public static readonly string MusicUpdated = "Music successfully updated";
 }

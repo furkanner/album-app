@@ -1,4 +1,5 @@
 using Business.Abstract;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -23,11 +24,9 @@ namespace WebAPI.Controllers
             {
                 return Ok(result.Data);
             }
-
             return BadRequest(result.Message);
         }
-
-
+        
         [HttpGet("GetById")]
         public IActionResult GetById(int Id)
         {
@@ -36,12 +35,11 @@ namespace WebAPI.Controllers
             {
                 return Ok(result.Data);
             }
-
             return BadRequest(result.Message);
         }
 
         [HttpPost("Add")]
-        public IActionResult Add(Entities.Concrete.Artist artist)
+        public IActionResult Add(Artist artist)
         {
             var result = _artistService.Add(artist);
             if (result.Success)
@@ -53,7 +51,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("Delete")]
-        public IActionResult Delete(Entities.Concrete.Artist artist)
+        public IActionResult Delete(Artist artist)
         {
             var result = _artistService.Delete(artist);
             if (result.Success)
@@ -65,7 +63,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("Update")]
-        public IActionResult Update(Entities.Concrete.Artist artist)
+        public IActionResult Update(Artist artist)
         {
             var result = _artistService.Update(artist);
             if (result.Success)

@@ -8,14 +8,9 @@ namespace Business.Abstract;
 public interface IMusicService
 {
     IDataResult<List<Music>> GetList();
-
-    //IDataResult<List<Music>> GetListBySarki(string Name);
     IDataResult<List<Music>> GetListByAlbum(int albumId);
-
-
+    IDataResult<List<Music>> GetListByArtist(int id);
     IResult Add(Music music);
-
     IResult Delete(Music music);
-
     IResult Update(Music music);
 }
