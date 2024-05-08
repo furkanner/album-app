@@ -1,6 +1,8 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Business.DependencyResolvers.Autofac;
+using DataAccess.Concrete.EntityFramework.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+var connection = @"Server=localhost;Port=5432;Database=Spotify;User Id=postgres;Password=1234;";
+builder.Services.AddDbContext<FurkanContext>(options=> options.UseNpgsql(connection));
 
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>

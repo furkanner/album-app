@@ -5,7 +5,9 @@ using Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework;
 
-public class EfArtistDal : EfEntityReposityBase<Artist, FurkanContext>, IArtistDal
+public class EfArtistDal : EfEntityRepositoryBase<Artist, FurkanContext>, IArtistDal
 {
-    
+    public EfArtistDal(FurkanContext context) : base(context)
+    {
+    }
 }

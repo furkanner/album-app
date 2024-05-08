@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Core.Entities;
 
 namespace Entities.Concrete;
+
 public class Album : IEntity
 {
     public int Id { get; set; }

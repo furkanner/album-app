@@ -15,7 +15,7 @@ namespace WebAPI.Controllers
             _albumService = albumService;
             _albumDal = albumDal;
         }
-        
+
         private readonly IAlbumService _albumService;
         private readonly IAlbumDal _albumDal;
 

@@ -9,7 +9,7 @@ public interface IMusicService
 {
     IDataResult<List<Music>> GetList();
     IDataResult<List<Music>> GetListByAlbum(int albumId);
-    IDataResult<List<Music>> GetListByArtist(int id);
+    IDataResult<List<Music>> GetListByArtist(int artistId);
     IResult Add(Music music);
     IResult Delete(Music music);
     IResult Update(Music music);

@@ -5,7 +5,6 @@ namespace DataAccess.Abstract;
 
 public interface IArtistDal : IEntityRepository<Artist>
 {
-    
 }
 
 public interface IEntityRepository<T>

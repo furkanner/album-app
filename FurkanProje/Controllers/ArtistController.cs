@@ -24,9 +24,10 @@ namespace WebAPI.Controllers
             {
                 return Ok(result.Data);
             }
+
             return BadRequest(result.Message);
         }
-        
+
         [HttpGet("GetById")]
         public IActionResult GetById(int Id)
         {
@@ -35,6 +36,7 @@ namespace WebAPI.Controllers
             {
                 return Ok(result.Data);
             }
+
             return BadRequest(result.Message);
         }
 

@@ -38,7 +38,7 @@ namespace WebAPI.Controllers
                 return BadRequest(new ErrorDataResult<List<Music>>("Album not found for the given Name"));
             }
         }
-        
+
         [HttpGet("GetListByArtist")]
         public IActionResult GetListByArtist(int id)
         {
