@@ -16,11 +16,12 @@ var connection = @"Server=localhost;Port=5432;Database=Spotify;User Id=postgres;
 builder.Services.AddDbContext<FurkanContext>(options=> options.UseNpgsql(connection));
 
 builder.Services.AddControllers();
-builder.Services.AddCors(options =>
+builder.Services.AddCors(o => o.AddPolicy("MyCorsPolicy", builder =>
 {
-    options.AddPolicy("AllowOrigin",
-        builder => builder.WithOrigins("http://localhost:3000"));
-});
+    builder.AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+}));
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(cb => cb.RegisterModule(new AutoBusinessModule()));
@@ -38,5 +39,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.MapControllers();
+app.UseCors("MyCorsPolicy");
 
 app.Run();
